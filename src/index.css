@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Senia's dreamy and elegant design system
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Soft pastel background tones */
+    --background: 350 30% 98%;
+    --foreground: 340 15% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card styling with soft elegance */
+    --card: 350 40% 97%;
+    --card-foreground: 340 20% 30%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 350 35% 96%;
+    --popover-foreground: 340 20% 30%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - soft rose pink */
+    --primary: 345 45% 75%;
+    --primary-foreground: 350 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - cream tones */
+    --secondary: 45 35% 90%;
+    --secondary-foreground: 340 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones for subtle elements */
+    --muted: 320 20% 92%;
+    --muted-foreground: 340 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - soft green */
+    --accent: 140 25% 85%;
+    --accent-foreground: 340 20% 30%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 70%;
+    --destructive-foreground: 0 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 88%;
+    --input: 340 15% 94%;
+    --ring: 345 45% 75%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom pastel gradient variables */
+    --gradient-dreamy: linear-gradient(135deg, hsl(345 45% 85%) 0%, hsl(45 35% 88%) 50%, hsl(140 25% 85%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(350 30% 98%) 0%, hsl(345 25% 95%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(345 50% 70%) 0%, hsl(320 40% 75%) 50%, hsl(140 30% 70%) 100%);
+    
+    /* Elegant shadows */
+    --shadow-soft: 0 4px 20px hsla(345 30% 75% / 0.15);
+    --shadow-dreamy: 0 8px 32px hsla(345 30% 70% / 0.2);
+    --shadow-glow: 0 0 40px hsla(345 45% 80% / 0.3);
+    
+    /* Social icon colors */
+    --instagram: 315 45% 75%;
+    --pinterest: 0 50% 75%;
+    --linkedin: 210 45% 75%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +122,69 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Custom gradient backgrounds */
+  .bg-gradient-dreamy {
+    background: var(--gradient-dreamy);
+  }
+  
+  .bg-gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Custom shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-dreamy {
+    box-shadow: var(--shadow-dreamy);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Social icon colors */
+  .text-instagram {
+    color: hsl(var(--instagram));
+  }
+  
+  .text-pinterest {
+    color: hsl(var(--pinterest));
+  }
+  
+  .text-linkedin {
+    color: hsl(var(--linkedin));
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+  
+  .animate-gentle-pulse {
+    animation: gentle-pulse 2s ease-in-out infinite;
   }
 }
