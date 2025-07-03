@@ -15,19 +15,16 @@ const Index = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-soft opacity-70 z-10"></div>
-
       {/* Main Content */}
-      <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
         {/* Main Title */}
         <div className="text-center mb-8 animate-float">
-          <h1 className="text-6xl md:text-8xl font-serif font-bold text-gradient mb-4 drop-shadow-lg">
+          <h1 className="text-6xl md:text-8xl font-serif font-bold text-white mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
             Senia's Site
           </h1>
           
           {/* Contact Me Text */}
-          <p className="text-2xl md:text-3xl font-script text-foreground/90 mb-12 drop-shadow-md">
+          <p className="text-2xl md:text-3xl font-script text-white mb-12" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
             Contact me
           </p>
         </div>
@@ -58,7 +55,7 @@ const Index = () => {
       {/* Minimal Footer */}
       <footer className="absolute bottom-0 left-0 right-0 z-20 p-6">
         <div className="text-center">
-          <p className="text-sm text-foreground/60 font-light">
+          <p className="text-sm text-white/80 font-light" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
             © 2024 Senia
           </p>
         </div>
