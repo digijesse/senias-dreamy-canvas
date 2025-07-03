@@ -1,6 +1,10 @@
-import { SocialIcon } from "@/components/SocialIcon";
+import { ArrowDown } from "lucide-react";
 
 const Index = () => {
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Video */}
@@ -9,57 +13,89 @@ const Index = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="fixed inset-0 w-full h-full object-cover z-0"
       >
         <source src="https://v3.fal.media/files/panda/cpD51JFheWZlLq02KjGdD_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
-        {/* Main Title */}
-        <div className="text-center mb-8 animate-float">
-          <h1 className="text-6xl md:text-8xl font-serif font-bold text-white mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            Senia's Site
-          </h1>
-          
-          {/* Contact Me Text */}
-          <p className="text-2xl md:text-3xl font-script text-white mb-12" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            Contact me
+      {/* Main Header */}
+      <header className="relative z-10 h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 
+          className="text-6xl md:text-8xl font-serif font-bold text-white mb-4"
+          style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)' }}
+        >
+          Senia's Site
+        </h1>
+        
+        {/* Bouncing Down Arrow */}
+        <div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center cursor-pointer animate-bounce"
+          onClick={scrollToContact}
+        >
+          <p 
+            className="text-xl font-script mb-2"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+          >
+            Contact Me
           </p>
+          <ArrowDown className="mx-auto" size={32} />
         </div>
+      </header>
 
-        {/* Social Icons */}
-        <div className="flex gap-6 items-center justify-center">
-          <SocialIcon 
-            type="instagram" 
-            href="https://instagram.com" 
-          />
-          <SocialIcon 
-            type="pinterest" 
-            href="https://pinterest.com" 
-          />
-          <SocialIcon 
-            type="linkedin" 
-            href="https://linkedin.com" 
-          />
+      {/* Contact Section */}
+      <div 
+        id="contact" 
+        className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20"
+        style={{ background: 'rgba(0, 0, 0, 0.6)' }}
+      >
+        <img
+          src="/lovable-uploads/9f4c3201-b015-46ea-860b-03aa7a54ce0b.png"
+          alt="Senia"
+          className="w-36 h-36 rounded-full object-cover mb-6 border-3 border-white"
+        />
+        
+        <h2 
+          className="text-4xl font-serif font-bold text-white mb-3"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+        >
+          Senia
+        </h2>
+        
+        <p 
+          className="text-lg text-white mb-8 max-w-md leading-relaxed"
+          style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt blandit.
+        </p>
+        
+        <div className="flex gap-4 flex-wrap justify-center">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-white/80 hover:bg-white text-gray-800 rounded-full font-semibold transition-colors duration-300"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-white/80 hover:bg-white text-gray-800 rounded-full font-semibold transition-colors duration-300"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://pinterest.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-white/80 hover:bg-white text-gray-800 rounded-full font-semibold transition-colors duration-300"
+          >
+            Pinterest
+          </a>
         </div>
-
-        {/* Floating decorative elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-primary/30 rounded-full animate-gentle-pulse"></div>
-        <div className="absolute top-40 right-20 w-6 h-6 bg-accent/40 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-16 w-3 h-3 bg-secondary/50 rounded-full animate-gentle-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-12 w-5 h-5 bg-primary/20 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
       </div>
-
-      {/* Minimal Footer */}
-      <footer className="absolute bottom-0 left-0 right-0 z-20 p-6">
-        <div className="text-center">
-          <p className="text-sm text-white/80 font-light" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
-            © 2024 Senia
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
