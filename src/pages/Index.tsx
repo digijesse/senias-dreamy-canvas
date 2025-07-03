@@ -50,7 +50,7 @@ const Index = () => {
         style={{ background: 'rgba(0, 0, 0, 0.6)' }}
       >
         <img
-          src="/lovable-uploads/9f4c3201-b015-46ea-860b-03aa7a54ce0b.png"
+          src="/lovable-uploads/22453cf6-9f50-4e16-85c5-abd65819d280.png"
           alt="Senia"
           className="w-36 h-36 rounded-full object-cover mb-6 border-3 border-white"
         />
